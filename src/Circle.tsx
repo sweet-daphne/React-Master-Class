@@ -20,11 +20,6 @@ interface CircleProps{
 }
 
 function Circle({bgColor, borderColor}:CircleProps){
-  const [value, setValue] = useState<number|string>(0);
-  setValue(2);
-  setValue("Hello");
-  setValue(true);
-
   return (
     <Container bgColor={bgColor} borderColor={borderColor ?? bgColor} />
   )
