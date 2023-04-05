@@ -1,4 +1,12 @@
 import { useState } from "react";
+import styled from "styled-components";
+
+const Container = styled.div`
+  background-color: ${(props) => props.theme.bgColor};
+`;
+const H1 = styled.h1`
+  color: ${(props) => props.theme.textColor };
+`;
 
 function App(){
   const [value, setValue] = useState("");
@@ -11,12 +19,15 @@ function App(){
     console.log('hello',value);
   }
   return (
-   <div>
-      <form onSubmit={onSubmit}>
-        <input value={value} onChange={onChange} type="text" placeholder="username"/>
-        <button>Log in</button>
-      </form>
-   </div>
+    <Container>
+      <H1>Proptected</H1>
+      <div>
+          <form onSubmit={onSubmit}>
+            <input value={value} onChange={onChange} type="text" placeholder="username"/>
+            <button>Log in</button>
+          </form>
+      </div>
+    </Container>
   );
 }
 
